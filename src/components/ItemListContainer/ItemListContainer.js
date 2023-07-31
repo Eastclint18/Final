@@ -2,10 +2,11 @@ import {db} from '../../config/firebase/firebase';
 import {getDocs , collection, addDoc, doc, } from 'firebase/firestore';
 import {useState, useEffect} from 'react';
 import Auth from '../Auth';
-import NavBar from '../NavBar/NavBar';
 import CarWidget from '../CardWidget/CarWidget';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount';
+import './ItemListContainer.css'
+
 
 
 
@@ -50,8 +51,9 @@ function ItemListContainer () {
                               <Route path='/' element={<h2>Teclados</h2>}/>
                               <Route path='/' element={<h2>Mouse</h2>}/>
                                                    </Routes> */
-
+                                                
                     <div>
+                            
                               
                               <div>     
                                        
@@ -64,7 +66,7 @@ function ItemListContainer () {
                                                   <h2 style={{color:item.stock > 0 ? 'green': 'red'}}>{item.nombre}</h2>
                                                   <p>{item.valor}</p>
                                                   <p>{item.stock}</p>
-                                                  <img  src={item.image}/>
+                                                  <img className='productimg' src={item.image}/>
                                                
                                                   <ItemCount initial={1} stock= {10} onAdd= {(quantity)=> console.log('cantidad agregada',quantity)}></ItemCount>
                                                 
@@ -78,6 +80,3 @@ function ItemListContainer () {
 }
 
 export default ItemListContainer;
-
-
-

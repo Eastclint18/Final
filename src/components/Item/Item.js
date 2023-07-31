@@ -1,4 +1,4 @@
-const imgtem = ({ id, name, img, price, stock }) => {
+const Item = ({ id, name, img, price, stock }) => {
 
           return (
                     <article className='CardItem' >
