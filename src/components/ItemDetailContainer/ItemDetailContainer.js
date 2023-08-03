@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react"
 import {getDoc , doc} from 'firebase/firestore'
-import {db} from '../../firebase/firebase'
+import { db } from '../../config/firebase/firebase';
 import {useParams} from 'react-router-dom'
+import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
           const [product, setProduct] = useState (null)
           const [loading, setLoading] =  useState(true)
 
           const {itemId} = useParams()
+          
 
 
           useEffect(() => {
@@ -28,6 +30,18 @@ const ItemDetailContainer = () => {
                               setLoading(false)
                     })
 }, [itemId])
-}
 
-export  default ItemDetailContainer
+
+return (
+          <div>
+              
+                  <ItemDetail {...product}
+                    
+                  />
+
+          </div>
+      );
+  }
+  
+  export default ItemDetailContainer;
+

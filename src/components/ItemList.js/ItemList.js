@@ -1,4 +1,4 @@
-import Item from '../Item/Item';
+import Item from '../ItemDetail/ItemDetail';
 
 
 const ItemList = ({Items}) => {
