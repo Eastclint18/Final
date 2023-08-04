@@ -8,6 +8,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import './ItemListContainer.css'
 import { Link } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import Item from '../Item/Item';
 
 
 
@@ -57,18 +58,20 @@ function ItemListContainer () {
                               </div>
                               <div>
                               {itemList.map ((item)=> (
-                                         <Link to={`/productos/${item.id}`} key={item.id} className='ItemLink'>
-                                         <article className='CardItem'>
-                                           <ItemDetail
-                                             id={item.id}
-                                             nombre={item.nombre}
-                                             image={item.image}
-                                             valor={item.valor}
-                                             stock={item.stock}
-                                           />
-                                         </article>
-                                       </Link>
-                              ) )}
+                                    <article className='CardItem' key={item.id}>
+                                      <Item
+                                   //IGOR
+                                   // ACA TE CREE OTRO COMPONENTE ITEM PARA QUE NO TENGA CONFLICTO CON ITEMDETAIL
+                                        id={item.id}
+                                        nombre={item.nombre}
+                                        image={item.image}
+                                        valor={item.valor}
+                                        stock={item.stock}
+                                      />
+                                    </article>
+                                        
+                                      ) )}
+                             
                     </div>
                     </div>
                 

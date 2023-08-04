@@ -1,20 +1,21 @@
 import { useState, useEffect } from "react"
-import {getDoc , doc} from 'firebase/firestore'
+import {getFirestore ,getDoc , doc} from 'firebase/firestore'
 import { db } from '../../config/firebase/firebase';
 import {useParams} from 'react-router-dom'
 import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = () => {
-          const [product, setProduct] = useState (null)
-          const [loading, setLoading] =  useState(true)
+          const [product, setProduct] = useState ({})
+          
 
           const {itemId} = useParams()
           
-
+       
 
           useEffect(() => {
-                    setLoading(true)
-
+            console.log(itemId);
+                   
+                  const querydb = getFirestore();
                     const docRef = doc(db , 'Items', itemId)
 
                     getDoc (docRef)
@@ -22,26 +23,25 @@ const ItemDetailContainer = () => {
                               const data = response.data ()
                               const productAdapted = {id : response.id, ...data}
                               setProduct(productAdapted)
+
+
                     })
-                    .catch(error => {
-                              console.log (error)
-                    })
-                    .finally (()=>{
-                              setLoading(false)
-                    })
+                  
 }, [itemId])
-
-
+   console.log(itemId)
 return (
-          <div>
-              
-                  <ItemDetail {...product}
-                    
-                  />
+    <div>
+     
+        <ItemDetail product={product}
+      
+        />
 
-          </div>
-      );
-  }
+ 
+    </div>
+  );
+ 
+}
+
   
   export default ItemDetailContainer;
 
