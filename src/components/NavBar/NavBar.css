@@ -1,0 +1,13 @@
+.navbar {
+          display : flex ; 
+          justify-content:center;
+          font: 200;
+       
+}
+
+
+.Categories { 
+          display : flex ;
+          align-items: center;
+
+}

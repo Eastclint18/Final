@@ -3,7 +3,7 @@ import './ItemDetail.css'
 const ItemDetail = ({id , nombre, image, valor, stock }) => {
 
           return (
-                    
+                  
                     <article className='CardItem' >
                               <header className='Header'>
                                         <h2 className='ItemHeader'>
@@ -31,7 +31,7 @@ const ItemDetail = ({id , nombre, image, valor, stock }) => {
 
 
                     </article>
-                 
+               
               
           )
 }

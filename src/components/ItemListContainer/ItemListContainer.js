@@ -48,14 +48,9 @@ function ItemListContainer () {
           
           return (
                            
-                    <div>
-                            
-                              
-                              <div>     
-                            
+                 
                                         
 
-                              </div>
                               <div>
                               {itemList.map ((item)=> (
                                     <article className='CardItem' key={item.id}>
@@ -74,7 +69,7 @@ function ItemListContainer () {
                              
                              
                     </div>
-                    </div>
+                    
                 
           )
 }
