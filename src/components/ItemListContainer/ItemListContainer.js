@@ -42,6 +42,8 @@ function ItemListContainer () {
 
           },[categoryId])
 
+          console.log(itemList);
+
 
       
 
@@ -55,7 +57,7 @@ function ItemListContainer () {
                               {itemList.map ((item)=> (
                                     <article className='CardItem' key={item.id}>
                                       <Item
-                             
+                                
                                         id={item.id}
                                   
                                         nombre={item.nombre}

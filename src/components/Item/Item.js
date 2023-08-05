@@ -2,10 +2,7 @@ import { Link } from "react-router-dom";
 import "./Item.css";
 
 const Item = ({ id, nombre, image, valor, stock }) => {
-           console.log(valor);
-           console.log(stock);
-           console.log(nombre);
-           console.log(image);
+          
   return (
     <article className="CardItem2">
       <header className="Header">

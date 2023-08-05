@@ -24,6 +24,7 @@ const ItemDetailContainer = () => {
                               const data = response.data ()
                               const productAdapted = {id : response.id, ...data}
                               setProduct(productAdapted)
+                              console.log(productAdapted);
 
 
                     })
@@ -31,14 +32,14 @@ const ItemDetailContainer = () => {
 }, [itemId])
    console.log(itemId)
 return (
-    <div className = 'contendordetalle'>
+  
      
         <ItemDetail {...product}
       
         />
 
  
-    </div>
+  
   );
  
 }
