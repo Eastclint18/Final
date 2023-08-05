@@ -1,0 +1,14 @@
+.ItemImg {
+          width:300px;
+
+} 
+
+.CardItem {
+          display:flex; 
+          flex-direction: column ;
+          
+          justify-content: center ;
+          align-items: center;
+}
+
+

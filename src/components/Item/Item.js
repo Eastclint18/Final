@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
+import './Item.css'
 
 const Item = ({id , nombre, image, valor, stock }) => {
 
           return (
                     
-                    <article className='CardItem' >
+                    <article className='CardItem2' >
                               <header className='Header'>
                                         <h2 className='ItemHeader'>
                                                   {nombre}

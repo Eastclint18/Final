@@ -31,7 +31,7 @@
                               <button className = 'button' onClick ={() => onAdd(quantity)} disabled={!stock}>
                                         </button>
                     </div>
- )
+ 
           
           </div>
  )

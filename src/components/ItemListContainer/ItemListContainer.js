@@ -1,7 +1,7 @@
 import {db} from '../../config/firebase/firebase';
 import {getDocs , collection, addDoc, doc, } from 'firebase/firestore';
 import {useState, useEffect} from 'react';
-import Auth from '../Auth';
+
 import CarWidget from '../CardWidget/CarWidget';
 import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom'
 import ItemCount from '../ItemCount/ItemCount';
@@ -37,6 +37,7 @@ function ItemListContainer () {
           useEffect(() => {
                
                  getItemList();
+                 console.log(Item)
 
 
           },[categoryId])
@@ -46,13 +47,12 @@ function ItemListContainer () {
 
           
           return (
-              
-                                                
+                           
                     <div>
                             
                               
                               <div>     
-                                       
+                            
                                         
 
                               </div>
@@ -60,9 +60,9 @@ function ItemListContainer () {
                               {itemList.map ((item)=> (
                                     <article className='CardItem' key={item.id}>
                                       <Item
-                                   //IGOR
-                                   // ACA TE CREE OTRO COMPONENTE ITEM PARA QUE NO TENGA CONFLICTO CON ITEMDETAIL
+                             
                                         id={item.id}
+                                  
                                         nombre={item.nombre}
                                         image={item.image}
                                         valor={item.valor}
@@ -71,6 +71,7 @@ function ItemListContainer () {
                                     </article>
                                         
                                       ) )}
+                             
                              
                     </div>
                     </div>
