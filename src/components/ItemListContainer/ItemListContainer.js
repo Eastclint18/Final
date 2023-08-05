@@ -51,7 +51,7 @@ function ItemListContainer () {
                  
                                         
 
-                              <div>
+                              <div className = 'contenedor'>
                               {itemList.map ((item)=> (
                                     <article className='CardItem' key={item.id}>
                                       <Item
