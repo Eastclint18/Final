@@ -1,6 +1,23 @@
 import "./ItemDetail.css";
+import { useState, useContext } from "react";
+import { CartContext } from "../../Context/CartContext";
 
-const ItemDetail = ({ nombre, image, valor, stock }) => {
+const ItemDetail = ({ id ,nombre, image, valor, stock }) => {
+  const [quantityAdded, setQuantityAdded] = useState(0);
+  const { addItem } = useContext(CartContext);
+
+  const handleOnAdd = (quantity) => {
+    setQuantityAdded(quantity);
+
+    const item = {
+      id,
+      nombre,
+      valor,
+    };
+    addItem(item, quantity);
+  };
+
+
   return (
     <article className="CardItemDetalle">
       <header className="HeaderDetalle">
@@ -18,11 +35,11 @@ const ItemDetail = ({ nombre, image, valor, stock }) => {
           quam at tellus ullamcorper, et cursus ante feugiat. Nam euismod, velit
           id posuere dignissim, tortor mauris malesuada dui, at consequat arcu
           arcu ac augue. Nullam nec dui quam. Ut scelerisque orci ut tellus
-          fermentum feugiat. 
+          fermentum feugiat.
         </p>
 
         <footer className="ItemFooter">
-          <button type="button" className="botoncentrado">
+          <button type="button" className="botoncentrado"     onClick={() => handleOnAdd(1)}>
             Agregar al Carrito
           </button>
         </footer>
