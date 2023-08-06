@@ -1,8 +1,9 @@
 import "./ItemDetail.css";
 import { useState, useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
+import { ItemCount} from  '../ItemCount/ItemCount'
 
-const ItemDetail = ({ id ,nombre, image, valor, stock }) => {
+const ItemDetail = ({ id, nombre, image, valor, stock }) => {
   const [quantityAdded, setQuantityAdded] = useState(0);
   const { addItem } = useContext(CartContext);
 
@@ -17,17 +18,15 @@ const ItemDetail = ({ id ,nombre, image, valor, stock }) => {
     addItem(item, quantity);
   };
 
-
   return (
     <article className="CardItemDetalle">
       <header className="HeaderDetalle">
-        <h2 className="ItemHeadercentrado">{nombre}</h2>
-
         <picture>
           <img src={image} alt={nombre} className="ItemImg" />
         </picture>
       </header>
       <section className="informacion">
+        <h2 className="ItemHeadercentrado">{nombre}</h2>
         <p className="info">Precio : {valor}</p>
         <p className="info">Stock disponible : {stock}</p>
         <p className="parrafo">
@@ -39,9 +38,14 @@ const ItemDetail = ({ id ,nombre, image, valor, stock }) => {
         </p>
 
         <footer className="ItemFooter">
-          <button type="button" className="botoncentrado"     onClick={() => handleOnAdd(1)}>
+          <button
+            type="button"
+            className="botoncentrado"
+            onClick={() => handleOnAdd(1)}
+          >
             Agregar al Carrito
           </button>
+        
         </footer>
       </section>
     </article>
