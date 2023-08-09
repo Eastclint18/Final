@@ -1,7 +1,7 @@
 import "./ItemDetail.css";
 import { useState, useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
-import { ItemCount} from  '../ItemCount/ItemCount'
+import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({ id, nombre, image, valor, stock }) => {
   const [quantityAdded, setQuantityAdded] = useState(0);
@@ -14,7 +14,7 @@ const ItemDetail = ({ id, nombre, image, valor, stock }) => {
       id,
       nombre,
       valor,
-    }
+    };
     addItem(item, quantity);
   };
 
@@ -36,15 +36,14 @@ const ItemDetail = ({ id, nombre, image, valor, stock }) => {
           arcu ac augue. Nullam nec dui quam. Ut scelerisque orci ut tellus
           fermentum feugiat.
         </p>
+        <ItemCount
+            initial={1}
+            stock = {stock}
+            onAdd={(quantity) => handleOnAdd(quantity)}
+          />
 
         <footer className="ItemFooter">
-          <button
-            type="button"
-            className="botoncentrado"
-            onClick={() => handleOnAdd(1)}
-          >
-            Agregar al Carrito
-          </button>
+         
         
         </footer>
       </section>

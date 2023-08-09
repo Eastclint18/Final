@@ -51,6 +51,7 @@
           max-width : 800px;
           min-height: 500px;
           display: flex; 
+          flex-direction: wrap;
           align-items: center; 
           border: 1px solid red;
           margin:0 auto ;
