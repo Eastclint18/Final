@@ -1,5 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
+import CartWidget from "../CartWidget/CartWidget";
+
 function NavBar() {
   return (
     <nav className="navbar ">
@@ -13,6 +15,7 @@ function NavBar() {
         <NavLink to={"/productos/mouses"} className="Mouses">
           Mouses
         </NavLink>
+        <CartWidget />
       </div>
     </nav>
   );

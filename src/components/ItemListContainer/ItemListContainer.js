@@ -1,13 +1,11 @@
 import { db } from "../../config/firebase/firebase";
-import { getDocs, collection, addDoc, doc } from "firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 import { useState, useEffect } from "react";
 
-import CarWidget from "../CardWidget/CarWidget";
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
-import ItemCount from "../ItemCount/ItemCount";
+import { useParams } from "react-router-dom";
+
 import "./ItemListContainer.css";
-import { Link } from "react-router-dom";
-import ItemDetail from "../ItemDetail/ItemDetail";
+
 import Item from "../Item/Item";
 
 function ItemListContainer() {
