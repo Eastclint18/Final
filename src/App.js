@@ -5,6 +5,9 @@ import "./App.css";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from './components/Cart/Cart';
 import {CartProvider} from './Context/CartContext';
+import React from 'react' ;
+
+export const CartContext = React.createContext('');
 
 function App() {
   return (
@@ -12,6 +15,7 @@ function App() {
       <BrowserRouter>
       <CartProvider>
         <NavBar />
+      
        
           <Routes>
             <Route path="/" element={<ItemListContainer />} />

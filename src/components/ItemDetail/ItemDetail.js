@@ -14,7 +14,7 @@ const ItemDetail = ({ id, nombre, image, valor, stock }) => {
       id,
       nombre,
       valor,
-    };
+    }
     addItem(item, quantity);
   };
 
