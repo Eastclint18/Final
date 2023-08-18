@@ -1,6 +1,7 @@
 import React from "react";
 
 const ItemCart = ({ product }) => {
+  console.log(product);
   return (
     <div className="itemCart">
       <img src={product.image} alt={product.nombre} />

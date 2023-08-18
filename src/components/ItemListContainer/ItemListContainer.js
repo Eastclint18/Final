@@ -31,10 +31,10 @@ function ItemListContainer() {
 
   useEffect(() => {
     getItemList();
-    console.log(Item);
+   
   }, [categoryId]);
 
-  console.log(itemList);
+  
 
   return (
     <div className="contenedor">

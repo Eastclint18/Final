@@ -14,7 +14,7 @@ const ItemDetailContainer = () => {
        
 
           useEffect(() => {
-            console.log(itemId);
+          
                    
                   const querydb = getFirestore();
                     const docRef = doc(db , 'Items', itemId)
@@ -24,13 +24,13 @@ const ItemDetailContainer = () => {
                               const data = response.data ()
                               const productAdapted = {id : response.id, ...data}
                               setProduct(productAdapted)
-                              console.log(productAdapted);
+                          
 
 
                     })
                   
 }, [itemId])
-   console.log(itemId)
+   
 return (
   
      

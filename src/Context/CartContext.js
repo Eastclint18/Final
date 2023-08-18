@@ -6,8 +6,7 @@ export const CartContext = createContext({
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-
-  console.log(cart);
+  console.log ( cart)
 
   const addItem = (item, quantity) => {
     if (!isInCart(item.id)) {
@@ -29,7 +28,13 @@ export const CartProvider = ({ children }) => {
   const isInCart = (itemId) => {
     return cart.some((prod) => prod.id === itemId);
   };
+  // un acumulado que es lo que va a ir acumulando en cada vuelta .
+  // currentvalue es la cantidad de productos que tenga por el valor de ese producto
+  const total = () => {
 
+    const sumWithInitial = cart.reduce((accumulator, product) => accumulator + product.valor*product.quantity, 0);
+
+  }
   return (
     <CartContext.Provider value={{ cart, addItem, removeItem, clearCart }}>
       {children}
