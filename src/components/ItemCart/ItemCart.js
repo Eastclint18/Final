@@ -5,6 +5,7 @@ const ItemCart = ({ product }) => {
   return (
     <div className="itemCart">
       <img src={product.image} alt={product.nombre} />
+
       <div>
         <p>Titulo : {product.nombre}</p>
         <p>Cantidad : {product.quantity}</p>
@@ -12,6 +13,7 @@ const ItemCart = ({ product }) => {
         <button>Eliminar</button>
       </div>
     </div>
+    
   );
 };
 
